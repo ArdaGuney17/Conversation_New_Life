@@ -30,15 +30,5 @@ val AskIfSomethingInMind: State = state(Parent) {
     onEntry {
         furhat.ask("Do you already have something in mind?")
     }
-
-    onResponse<Yes> {
-        furhat.say("Good to hear!")
-        goto(MasterSelection) // Transition to MasterSelection
-    }
-
-    onResponse<No> {
-        furhat.say("That is okay.")
-        goto(MasterSelection) // Transition to MasterSelection (or another state if needed)
-    }
 }
 

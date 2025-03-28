@@ -6,6 +6,7 @@ import furhatos.nlu.Intent
 import furhatos.nlu.common.No
 import furhatos.nlu.common.Yes
 import furhatos.util.Language
+import furhatos.app.newmasterfinder.flow.main.Idle
 
 class AskAboutMasters: Intent() {
     override fun getExamples(lang: Language): List<String> {
@@ -56,18 +57,5 @@ val FollowUpQuestion: State = state {
             }
         }
     }
-
-    onResponse<AskAboutMasters> {
-        goto(MasterSelection)
-    }
-
-    onResponse<AskAboutBachelors> {
-        goto(MasterSelection) //change to bachelor
-    }
-
-    onResponse<AskAboutRequirements> {
-        goto(MasterSelection) //change to requirements
-    }
-
 
 }
